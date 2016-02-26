@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/introHCI.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style4.css" />
+<script src="js/modernizr.custom.63321.js"></script>
+<body>
+ <div class="container">
+  <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+  <!-- p means paragraph -->
+  <div class="jumbotron">
+   <h1>Welcome {{loginStatus.name}}!</h1>
+   <h2>Student</h2>
+   <h3>Logged in as {{loginStatus.username}}</h3>
+     <p>Current Course: {{loginStatus.currentCourseID}} {{loginStatus.currentCourseName}}</p>
+   <img src={{loginStatus.image}} alt="profilePic" id="proPic">
+
+   <a href="/logout"><button id="testjs" class="btn btn-primary btn-lg">Logout</button></a>
+ </div>
+
+
+
+    <form action="/selectCourse" method="post" onSubmit="return updateSelectedCourse(this)">
+
+      <select name="courseDropdown" id="cd-dropdown" class="cd-select">
+        <option value=-1 selected>Choose course:</option>
+        {{#each loginStatus.courses}}
+        <option value="{{courseID}}" >{{courseID}}: {{courseName}}</option>
+        {{/each}}
+
+      </select>
+      <div class="mainButton">
+        <button type="submit" class="btn btn-default centered">Select Course</button>
+      </div>
+
+      <hr>
+      <br>
+
+      <div class="mainButton">
+        <a href="/play" ><button onClick="return checkSelectedCourse()" type="button" class="btn btn-default">Play</button></a>
+        <br><br>
+        <a href="/myStats"><button  type="button" class="btn btn-default">My Stats</button></a>
+
+
+      </div>
+    </form>
+
+
+</div>
+
+
+
+
+    <div class="help">
+      <a href="/help"><button id="helpBtn" type="button" class="btn btn-default">?</button></a>
+    </div>
+
+
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/introHCI.js"></script>
+  <script type="text/javascript" src="js/jquery.dropdown.js"></script>
+  <script type="text/javascript">
+
+  $( function() {
+
+    $( '#cd-dropdown' ).dropdown();
+
+  });
+
+  </script>
+</body>
+</html>

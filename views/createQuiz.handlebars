@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Create Quiz</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/introHCI.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->        
+    </head>
+
+    <body>
+     <div class="container">
+      <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+      <!-- p means paragraph -->
+      
+      <div class="t1">	<h1>Create Quiz</h1></div>
+      <h3>{{status.loginStatus.currentCourseID}}: {{status.loginStatus.currentCourseName}}</h3>
+
+      <a href="/instructor"><button id="testjs" class="btn btn-primary btn-lg">Home</button></a>
+
+      
+
+      <div class="container">
+        <form id="addQuestions" role="form" method="get" onsubmit="return checkQuestions(this)" action="/addQuestions">
+
+          <div class="form-group">
+            <label for="question">Question</label>
+            <input type="text" class="form-control" id="question" placeholder="Question" name="question">
+          </div>
+          <div class="form-group">
+            <label for="text">Answer Choice A</label>
+            <input type="text" class="form-control" id="choiceA" placeholder="Answer Choice A" name="choiceA">
+          </div>
+          <div class="form-group">
+            <label for="text">Answer Choice B</label>
+            <input type="text" class="form-control" id="choiceB" placeholder="Answer Choice B" name="choiceB">
+          </div>
+          <div class="form-group">
+            <label for="text">Answer Choice C</label>
+            <input type="text" class="form-control" id="choiceC" placeholder="Answer Choice C" name="choiceC">
+          </div>
+          <div class="form-group">
+            <label for="text">Answer Choice D</label>
+            <input type="text" class="form-control" id="choiceD" placeholder="Answer Choice D" name="choiceD">
+          </div>
+          <input type="radio" id = "correctAnswer" name="correctAnswer" value="A" checked=true> A
+          <input type="radio" id = "correctAnswer" name="correctAnswer" value="B"> B
+          <input type="radio" id = "correctAnswer" name="correctAnswer" value="C"> C
+          <input type="radio" id = "correctAnswer" name="correctAnswer" value="D"> D
+<br>
+          <input type="submit" id="addQuestionsBtn" class="btn btn-default" value="Add Question"></input>
+        </form>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/introHCI.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,119 @@
+/* applies to anything of class "example-class-selector" */
+.example-class-selector {
+	margin-top: 2em;
+}
+
+/* applies to any <p> descendants of an element of class "example-class-selector" */
+.example-class-selector p {
+	/* Colors are in hexadecimal: http://www.colorpicker.com/ */	
+	color: #CC00AA;
+}
+
+
+
+/* this style exists to make it obvious that you've successfully linked
+the CSS to the page. feel free to remove it once the link is working. */
+body {
+   border: 1px dotted gray;
+   padding: 20px;
+   content:"";
+   background: url("/images/board.jpg");
+
+   background-repeat: no-repeat;
+    color:white;
+}
+
+.centered{
+  text-align: center;
+}
+
+.jumbotron {
+	position: relative;
+	background: none;
+    color:white;
+}
+
+.jumbotron:after {
+
+   opacity: 0.2;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: absolute;
+   z-index: -1;	
+}
+
+.jumbotron p {
+   color: #BBBBBB;
+}
+.jumbotron p.active {
+   color: #1f6ddd;
+}
+.Friends a {
+   margin-left: 0px;
+   background-color: #deebf7;
+   padding: 10px;
+   width: 100px;
+}
+.Topic a{
+    width:20%;
+    background-color: #deebf7;
+    margin-right:auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.TopicHeader{
+   text-align: center;
+}
+.PlayButton{
+   text-align: center;
+
+}
+
+#playBtn{
+    font-size:50px;
+    font-weight: bolder;
+}
+
+.StatsButton{
+   text-align: center; 
+}
+
+.help{
+    top:10px;
+    right:10px;
+    position:fixed;
+}
+
+#toggleClick{
+  color:white;
+  text-align: center;
+  background-color: transparent;
+}
+
+#signupForm{
+  display:none;
+}
+
+#helpBtn{
+    color:red;
+    font-weight: bolder;
+}
+
+.t1{
+    text-align: center;
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+
+.mainButton{
+    text-align: center;
+}
+
+#proPic{
+  max-width: 20%;
+  max-height: 25%;
+}
+

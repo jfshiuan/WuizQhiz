@@ -1,0 +1,86 @@
+{
+	"loginData":
+	[
+		{
+			"username": "username",
+			"password": "password",
+			"name": "name",
+			"type": "student",
+			"image": "/images/user.png",
+			"friends":
+			[
+			],
+			"courses":
+			[
+			]
+		},
+		{
+			"username": "DJ Khaled",
+			"password": "We Da Best!",
+			"name": "Khaled",
+			"type:": "student",
+			"image": "/images/khaled.jpg",
+			"friends":
+			[
+				{
+					"username": "Rozay",
+					"name": "Rick Ross",
+					"image": "/images/ross.jpg"
+				},
+				{
+					"username": "Weezy",
+					"name": "Lil Wayne",
+					"image": "/images/wayne.jpg"
+				}
+			],
+			"courses":
+			[
+				{
+					"courseID": "DJK 100",
+					"courseName": "DJ Khaled"
+				},
+				{
+					"courseID": "DJK 101A",
+					"courseName": "We Takin' Over"
+				},
+				{
+					"courseID": "DJK 101B",
+					"courseName": "We Da Best"
+				},
+				{
+					"courseID": "DJK 101C",
+					"courseName": "Another One"
+				}
+			]
+		},
+		{
+			"username": "DJ Khaled 2",
+			"password": "Another One",
+			"name": "Khaled",
+			"image": "/images/khaled2.jpg",
+			"type": "instructor",
+			"friends":
+			[
+			],
+			"courses":
+			[
+				{
+					"courseID": "DJK 100",
+					"courseName": "DJ Khaled"
+				},
+				{
+					"courseID": "DJK 101A",
+					"courseName": "We Takin' Over"
+				},
+				{
+					"courseID": "DJK 101B",
+					"courseName": "We Da Best"
+				},
+				{
+					"courseID": "DJK 101C",
+					"courseName": "Another One"
+				}
+			]
+		}
+	]
+}

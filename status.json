@@ -1,0 +1,19 @@
+{
+	"loginStatus":
+	{
+		"loggedIn": "false",
+		"name": "",
+		"username": "",
+		"userType": "",
+		"invalid": "",
+		"image": "/images/user.png",
+		"friends":
+		[
+		],
+		"courses":
+		[
+		],
+		"currentCourseID": "",
+		"currentCourseName": ""
+	}
+}
