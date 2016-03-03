@@ -1,6 +1,6 @@
 var userData = require("../userData.json");
 var status = require("../status.json");
-
+var questions = require("../questions.json");
 
 
 exports.getSelectedCourse = function(req, res)
@@ -14,3 +14,13 @@ exports.getSelectedCourse = function(req, res)
 	 					   description: req.query.description, 
 	 					   imageURL: 'http://lorempixel.com/400/400/people'});*/
 };
+
+exports.getCorrectAnswer = function(req,res)
+{
+
+	var arr = questions['course'];
+
+
+	res.json();
+}
+

@@ -31,7 +31,42 @@
 						"Donald Trump",
 						"Bob"
 						],
-						"correctAnswer": "A"
+						"correctAnswer": "DJ Khaled"
+					},
+					{
+						"problemID": "2",
+						"question": "Who da best?",
+						"possibleAnswers":
+						[
+						"They",
+						"You",
+						"We",
+						"I"
+						],
+						"correctAnswer": "We"
+					},
+					{
+						"problemID": "3",
+						"question": "Another _____?",
+						"possibleAnswers":
+						[
+						"Zero",
+						"One",
+						"Two",
+						"Three"
+						],
+						"correctAnswer": "One"
+					},
+					{
+						"problemID": "4",
+						"question": "What are we doing?",
+						"possibleAnswers":
+						[
+						"Winning",
+						"Takin' Over",
+						"All of the above"
+						],
+						"correctAnswer": "All of the above"
 					}
 				]
 			}

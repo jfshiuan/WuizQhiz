@@ -19,16 +19,22 @@
     </head>
 
     <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+    <div class="container-fluid">
+      <a class="glyphicon glyphicon-home navbar-brand navbar-left" href="/home"> Home</a>
+      <a class="glyphicon glyphicon-info-sign navbar-brand navbar-left" href="/help"> Help</a>
+      <a class="glyphicon glyphicon-log-out navbar-brand navbar-left" href="/logout"> Logout</a>
+      <span class = "glyphicon glyphicon-user navbar-brand navbar-right"> {{status.loginStatus.username}}</span>
+    </div>
+  </nav>
+      
      <div class="container">
       <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
       <!-- p means paragraph -->
-      
+       <br>
       <div class="t1">	<h1>Student Stats</h1></div>
 
-      <a href="/instructor"><button id="testjs" class="btn btn-primary btn-lg">Home</button></a>
-
-      
-
+   
 
 
 

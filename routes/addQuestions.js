@@ -9,7 +9,33 @@ exports.addQuestions=function(req, res)
 	var choiceB = req.query.choiceB;
 	var choiceC = req.query.choiceC;
 	var choiceD = req.query.choiceD;
-	var correctAns = req.query.correctAnswer;
+	var correct = req.query.correctAnswer;
+
+	var correctAns;
+
+	switch(correct)
+	{
+		case 'A':
+		{
+			correctAns=choiceA;
+			break;
+		}
+		case 'B':
+		{
+			correctAns=choiceB;
+			break;
+		}
+		case 'C':
+		{
+			correctAns=choiceC;
+			break;
+		}
+		case 'D':
+		{
+			correctAns=choiceD;
+			break;
+		}
+	}
 
 	var selectedCourseID = status["loginStatus"]["currentCourseID"];
 
@@ -19,12 +45,59 @@ exports.addQuestions=function(req, res)
 	}
 	else
 	{
-		questions["course"].push(
+
+
+		var arr=questions["course"];
+		var courseQuestions=-1;
+
+		for(var i=0;i<arr.length;i++)
 		{
-			courseID: selectedCourseID,
-			problems:
-			[
+			var obj = arr[i];
+			var courseID, probs;
+			for(var key in obj)
 			{
+				var attrName = key;
+				var attrValue = obj[key];
+
+				if(attrName == "courseID")
+				{
+					courseID=attrValue;
+				}
+				if(attrName == "problems")
+				{
+					probs=attrValue;
+				}
+			}
+
+			if(courseID==selectedCourseID)
+			{
+				courseQuestions=probs;
+			}
+
+		}
+			//////
+			if(courseQuestions!=-1)
+			{
+				courseQuestions.push(
+				{
+				problemID: "",  ////////////TO-DO
+				question: quest,
+				possibleAnswers:
+				[
+				choiceA, choiceB, choiceC, choiceD
+				],
+				correctAnswer: correctAns
+			});
+
+			}
+			else
+			{
+				questions["course"].push(
+				{
+					courseID: selectedCourseID,
+					problems:
+					[
+					{
 				problemID: "",  ////////////TO-DO
 				question: quest,
 				possibleAnswers:
@@ -35,74 +108,9 @@ exports.addQuestions=function(req, res)
 			}
 			]
 		});
-		res.render('instructor', status);
-	}
-
-}
-
-
-exports.signup = function(req, res)
-{  
-	var username = req.query.username;
-
-	var arr = userData["loginData"];
-	var uniqueUsername = true;
-
-
-	for(var i=0;i<arr.length;i++)
-	{
-		var obj = arr[i];
-		var uname;
-		for(var key in obj)
-		{
-			var attrName = key;
-			var attrValue = obj[key];
-
-			if(attrName == "username")
-			{
-				uname=attrValue;
 			}
+			res.redirect('/instructor');
+
 		}
 
-		if(uname == username)
-		{
-			uniqueUsername=false;
-		}
-	}
-
-
-	if(uniqueUsername)
-	{
-
-
-		status["loginStatus"]["loggedIn"]="true";
-		status["loginStatus"]["name"]=req.query.name;
-		status["loginStatus"]["username"]=username;
-		status["loginStatus"]["userType"]=req.query.userType;
-		status["loginStatus"]["image"]="/images/user.png";
-
-		userData["loginData"].push(
-		{
-			username: req.query.username, 
-			password: req.query.password, 
-			name: req.query.name,
-			type: req.query.userType,
-			image: "/images/user.png"
-		});
-
-		if(req.query.userType=="student")
-		{
-			res.render('student', status);
-		}
-
-		else
-		{
-			res.render('instructor', status);
-		}
-	}
-
-	else
-	{
-		res.render('index', status);
-	}
-};
+	};

@@ -6,75 +6,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/introHCI.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/style4.css" />
+<link href="css/introHCI.css" rel="stylesheet">
 <script src="js/modernizr.custom.63321.js"></script>
+
 <body>
- <div class="container">
-  <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-  <!-- p means paragraph -->
-  <div class="jumbotron">
-   <h1>Welcome {{loginStatus.name}}!</h1>
-   <h2>Student</h2>
-   <h3>Logged in as {{loginStatus.username}}</h3>
-     <p>Current Course: {{loginStatus.currentCourseID}} {{loginStatus.currentCourseName}}</p>
-   <img src={{loginStatus.image}} alt="profilePic" id="proPic">
-
-   <a href="/logout"><button id="testjs" class="btn btn-primary btn-lg">Logout</button></a>
- </div>
 
 
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+    <div class="container-fluid">
+      <a class="glyphicon glyphicon-home navbar-brand navbar-left" href="/home"> Home</a>
+      <a class="glyphicon glyphicon-info-sign navbar-brand navbar-left" href="/help"> Help</a>
+      <a class="glyphicon glyphicon-log-out navbar-brand navbar-left" href="/logout"> Logout</a>
+      <span class = "glyphicon glyphicon-user navbar-brand navbar-right"> {{loginStatus.username}}</span>
+    </div>
+  </nav>
 
-    <form action="/selectCourse" method="post" onSubmit="return updateSelectedCourse(this)">
+  
 
-      <select name="courseDropdown" id="cd-dropdown" class="cd-select">
-        <option value=-1 selected>Choose course:</option>
-        {{#each loginStatus.courses}}
-        <option value="{{courseID}}" >{{courseID}}: {{courseName}}</option>
-        {{/each}}
-
-      </select>
-      <div class="mainButton">
-        <button type="submit" class="btn btn-default centered">Select Course</button>
-      </div>
-
-      <hr>
-      <br>
-
-      <div class="mainButton">
-        <a href="/play" ><button onClick="return checkSelectedCourse()" type="button" class="btn btn-default">Play</button></a>
-        <br><br>
-        <a href="/myStats"><button  type="button" class="btn btn-default">My Stats</button></a>
+  <div class="container">
+    <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+    <!-- p means paragraph -->
+    <div class="jumbotron">
+     <h1>Welcome {{loginStatus.name}}!</h1>
 
 
-      </div>
-    </form>
+     
 
+
+
+   </div>
+
+   <img src={{loginStatus.image}} onclick="changeProfilePicture()" alt="profilePic" class="proPic">
+
+   <form action="/selectCourse" method="post" onSubmit="return updateSelectedCourse(this)">
+
+    <select name="courseDropdown" id="cd-dropdown" class="cd-select">
+      <option value=-1 selected>Choose course:</option>
+      {{#each loginStatus.courses}}
+      <option value="{{courseID}}" >{{courseID}}: {{courseName}}</option>
+      {{/each}}
+
+    </select>
+    <div class="mainButton">
+      <button type="submit" onClick="return selectAction('play')" type="button" class="btn btn-default">Play</button>
+      <button type="submit"  onClick="return selectAction('myStats')" type="button" class="btn btn-default">My Stats</button>
+    </div>
+    <hr>
+    <br>
+  </form>
+
+
+  <div class="mainButton">
+    <a href="/addCourse"> <button class="btn btn-default">Add New Courses</button> </a>
+  </div>
 
 </div>
 
 
 
 
-    <div class="help">
-      <a href="/help"><button id="helpBtn" type="button" class="btn btn-default">?</button></a>
-    </div>
 
 
 
-  <script src="https://code.jquery.com/jquery.js"></script>
 
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/introHCI.js"></script>
-  <script type="text/javascript" src="js/jquery.dropdown.js"></script>
-  <script type="text/javascript">
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/introHCI.js"></script>
+<script type="text/javascript" src="js/jquery.dropdown.js"></script>
+<script type="text/javascript">
 
-  $( function() {
+$( function() {
 
-    $( '#cd-dropdown' ).dropdown();
+  $( '#cd-dropdown' ).dropdown();
 
-  });
+});
 
-  </script>
+</script>
 </body>
 </html>

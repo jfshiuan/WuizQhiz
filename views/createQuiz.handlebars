@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Create Quiz</title>	
+	<title>Add Question</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,60 +19,68 @@
     </head>
 
     <body>
-     <div class="container">
-      <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-      <!-- p means paragraph -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+        <div class="container-fluid">
+          <a class="glyphicon glyphicon-home navbar-brand navbar-left" href="/home"> Home</a>
+          <a class="glyphicon glyphicon-info-sign navbar-brand navbar-left" href="/help"> Help</a>
+          <a class="glyphicon glyphicon-log-out navbar-brand navbar-left" href="/logout"> Logout</a>
+          <span class = "glyphicon glyphicon-user navbar-brand navbar-right"> {{status.loginStatus.username}}</span>
+        </div>
+      </nav>
       
-      <div class="t1">	<h1>Create Quiz</h1></div>
-      <h3>{{status.loginStatus.currentCourseID}}: {{status.loginStatus.currentCourseName}}</h3>
-
-      <a href="/instructor"><button id="testjs" class="btn btn-primary btn-lg">Home</button></a>
-
-      
-
       <div class="container">
-        <form id="addQuestions" role="form" method="get" onsubmit="return checkQuestions(this)" action="/addQuestions">
+        <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+        <!-- p means paragraph -->
+        <br> 
+        <div class="t1">	<h1>Add Question</h1></div>
+        <h3>{{status.loginStatus.currentCourseID}}: {{status.loginStatus.currentCourseName}}</h3>
 
-          <div class="form-group">
-            <label for="question">Question</label>
-            <input type="text" class="form-control" id="question" placeholder="Question" name="question">
-          </div>
-          <div class="form-group">
-            <label for="text">Answer Choice A</label>
-            <input type="text" class="form-control" id="choiceA" placeholder="Answer Choice A" name="choiceA">
-          </div>
-          <div class="form-group">
-            <label for="text">Answer Choice B</label>
-            <input type="text" class="form-control" id="choiceB" placeholder="Answer Choice B" name="choiceB">
-          </div>
-          <div class="form-group">
-            <label for="text">Answer Choice C</label>
-            <input type="text" class="form-control" id="choiceC" placeholder="Answer Choice C" name="choiceC">
-          </div>
-          <div class="form-group">
-            <label for="text">Answer Choice D</label>
-            <input type="text" class="form-control" id="choiceD" placeholder="Answer Choice D" name="choiceD">
-          </div>
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="A" checked=true> A
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="B"> B
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="C"> C
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="D"> D
-<br>
-          <input type="submit" id="addQuestionsBtn" class="btn btn-default" value="Add Question"></input>
-        </form>
+
+
+        <div class="container">
+          <form id="addQuestions" role="form" method="get" onsubmit="return checkQuestions(this)" action="/addQuestions">
+
+            <div class="form-group">
+              <label for="question">Question</label>
+              <input type="text" class="form-control" id="question" placeholder="Question" name="question">
+            </div>
+            <div class="form-group">
+              <label for="text">Answer Choice A</label>
+              <input type="text" class="form-control" id="choiceA" placeholder="Answer Choice A" name="choiceA">
+            </div>
+            <div class="form-group">
+              <label for="text">Answer Choice B</label>
+              <input type="text" class="form-control" id="choiceB" placeholder="Answer Choice B" name="choiceB">
+            </div>
+            <div class="form-group">
+              <label for="text">Answer Choice C</label>
+              <input type="text" class="form-control" id="choiceC" placeholder="Answer Choice C" name="choiceC">
+            </div>
+            <div class="form-group">
+              <label for="text">Answer Choice D</label>
+              <input type="text" class="form-control" id="choiceD" placeholder="Answer Choice D" name="choiceD">
+            </div>
+            <label for="text">Correct Answer</label> <br>
+            <input type="radio" id = "correctAnswer" name="correctAnswer" value="A" checked=true> A
+            <input type="radio" id = "correctAnswer" name="correctAnswer" value="B"> B
+            <input type="radio" id = "correctAnswer" name="correctAnswer" value="C"> C
+            <input type="radio" id = "correctAnswer" name="correctAnswer" value="D"> D
+            <br>
+            <input type="submit" id="addQuestionsBtn" class="btn btn-default" value="Add Question"></input>
+          </form>
+        </div>
+
+
+
+
+
       </div>
 
 
 
 
-
-    </div>
-
-
-
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/introHCI.js"></script>
-  </body>
-  </html>
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/introHCI.js"></script>
+    </body>
+    </html>

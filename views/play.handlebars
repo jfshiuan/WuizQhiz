@@ -7,11 +7,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/introHCI.css" rel="stylesheet">
-	<!-- this is a comment in HTML -->
+  <link rel="stylesheet" type="text/css" href="css3-preloader-transition-start/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css3-preloader-transition-finish/css/main.css" />
+  <link href="css/introHCI.css" rel="stylesheet">
+  <!-- this is a comment in HTML -->
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -19,41 +21,62 @@
     </head>
 
     <body>
-     <div class="container">
-      <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-      <!-- p means paragraph -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+        <div class="container-fluid">
+          <a class="glyphicon glyphicon-home navbar-brand navbar-left" href="/home"> Home</a>
+          <a class="glyphicon glyphicon-info-sign navbar-brand navbar-left" href="/help"> Help</a>
+          <a class="glyphicon glyphicon-log-out navbar-brand navbar-left" href="/logout"> Logout</a>
+          <span class = "glyphicon glyphicon-user navbar-brand navbar-right"> {{status.loginStatus.username}}</span>
+        </div>
+      </nav>
       
-      <div class="t1">	<h1>Play</h1></div>
 
-      <a href="/student"><button id="testjs" class="btn btn-primary btn-lg">Home</button></a>
+      <div id="loader-wrapper">
+        <div id="loader"></div>
 
-      
-
-{{#each qs}}
-<h2>{{question}}</h2> <br>
-{{#each possibleAnswers}}
-<h3>{{this}}</h3> <br>
-{{/each}}
-  <form id="addQuestions" role="form" method="get"  action="/student">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        <div id="content">
 
 
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="A" checked=true> A
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="B"> B
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="C"> C
-          <input type="radio" id = "correctAnswer" name="correctAnswer" value="D"> D
-<br>
-          <input type="submit" id="submitAnswer" class="btn btn-default" value="Submit Answer"></input>
+
+        </div>
+      </div>
+
+
+      <div class="container">
+        <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+        <!-- p means paragraph -->
+        <br>     
+        <div class="t1">	<h1>Play</h1></div>
+
+
+
+
+
+        <h2>{{qs.question}}</h2> <br>
+        <form role="form" action="/submitAnswer">
+          {{#each qs.possibleAnswers}}
+          <div class="studentAnswer"> <input type="radio"  id="studentAnswer" name="studentAnswer" value="{{this}}"> {{this}}</div>
+          <br>
+          {{/each}}
+
+
+          <br>
+          <div class="centered"> <input type="submit" id="sendAnswer" class="btn btn-default" value="Submit Answer"></input></div>
         </form>
-
-{{/each}}
-
-    </div>
-
-
+        <hr>
+        <div class="score">Score: {{status.loginStatus.score}} / {{status.loginStatus.totalScore}}</span>
+          <hr>
+        </div>
 
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/introHCI.js"></script>
-  </body>
-  </html>
+
+
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="css3-preloader-transition-start/js/main.js"></script>
+        <script src="css3-preloader-transition-finish/js/main.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/introHCI.js"></script>
+      </body>
+      </html>

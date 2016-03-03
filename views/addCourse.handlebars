@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style4.css" />
+<link href="css/introHCI.css" rel="stylesheet">
+<script src="js/modernizr.custom.63321.js"></script>
+
+<body>
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+    <div class="container-fluid">
+      <a class="glyphicon glyphicon-home navbar-brand navbar-left" href="/home"> Home</a>
+      <a class="glyphicon glyphicon-info-sign navbar-brand navbar-left" href="/help"> Help</a>
+      <a class="glyphicon glyphicon-log-out navbar-brand navbar-left" href="/logout"> Logout</a>
+      <span class = "glyphicon glyphicon-user navbar-brand navbar-right"> {{status.loginStatus.username}}</span>
+    </div>
+  </nav>
+
+  
+
+  <div class="container">
+    <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+    <!-- p means paragraph -->
+    <div class="jumbotron">
+
+
+     
+
+
+
+    </div>
+
+
+
+    <form action="/addTheCourse" method="post" onSubmit="return updateSelectedCourse(this)">
+
+      <select name="courseDropdown" id="cd-dropdown" class="cd-select">
+        <option value=-1 selected>Choose course:</option>
+        {{#each courses}}
+        <option value="{{courseID}}" >{{courseID}}: {{courseName}}</option>
+        {{/each}}
+
+      </select>
+      <div class="mainButton">
+        <button type="submit"  type="button" class="btn btn-default">Add Course</button>
+      </div>
+      <hr>
+      <br>
+    </form>
+
+
+    <div class="mainButton">
+      <br>  <br>  
+      <a href="/home"><button class="btn btn-default">Home</button></a>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/introHCI.js"></script>
+  <script type="text/javascript" src="js/jquery.dropdown.js"></script>
+  <script type="text/javascript">
+
+  $( function() {
+
+    $( '#cd-dropdown' ).dropdown();
+
+  });
+
+  </script>
+</body>
+</html>

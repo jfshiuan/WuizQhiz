@@ -6,12 +6,11 @@ var status = require("../status.json");
 exports.getLoginData = function(req, res)
 {
 	res.json(userData['loginData']);
-}
+};
 
 
 exports.login = function(req, res)
 {  
-	
 	var username = req.query.username;
 	var password = req.query.password;
 
@@ -81,14 +80,18 @@ exports.login = function(req, res)
 		status["loginStatus"]["image"]=image;
 		status["loginStatus"]["friends"]=friends;
 		status["loginStatus"]["courses"]=courses;
+		status["loginStatus"]["questionNumber"]=0;
+		status["loginStatus"]["score"]=0;
+		status["loginStatus"]["totalScore"]=0;
+		status["loginStatus"]["opponentScore"]=0;
 
 		if(userType=="student")
 		{
-			res.render('student', status);
+			res.redirect('/student');
 		}
 		if(userType=="instructor")
 		{
-			res.render('instructor', status);
+			res.redirect('/instructor');
 		}
 	}
 	else
@@ -102,8 +105,13 @@ exports.login = function(req, res)
 		status["loginStatus"]["courses"]=[];
 		status["loginStatus"]["currentCourseID"]="";
 		status["loginStatus"]["currentCourseName"]="";
-
-		res.render('index', status);
+		status["loginStatus"]["action"]="";
+		status["loginStatus"]["questionNumber"]=0;
+		status["loginStatus"]["score"]=0;
+		status["loginStatus"]["totalScore"]=0;
+		status["loginStatus"]["opponentScore"]=0;
+		
+		res.redirect('/');
 	}
 
  /*data["friends"].push({name: req.query.name, 

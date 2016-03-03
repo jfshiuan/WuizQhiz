@@ -1,0 +1,111 @@
+html { overflow-y: scroll; }
+
+
+::selection { background: #5f74a0; color: #fff; }
+::-moz-selection { background: #5f74a0; color: #fff; }
+::-webkit-selection { background: #5f74a0; color: #fff; }
+
+br { display: block; line-height: 1.6em; } 
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+input, textarea { 
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 80%;
+  -ms-text-size-adjust: 80%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none; 
+}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong, b { font-weight: bold; } 
+
+table {
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;    
+  border: solid #ccc 1px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 1px #ccc; 
+  -moz-box-shadow: 0 1px 1px #ccc; 
+  box-shadow: 0 1px 1px #ccc;      
+  text-align:center;
+}
+img { border: 0; max-width: 100%; }
+
+tr td{
+  text-align:center;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;    
+  border: solid #ccc 1px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 1px #ccc; 
+  -moz-box-shadow: 0 1px 1px #ccc; 
+  box-shadow: 0 1px 1px #ccc;  
+}
+
+
+
+#keywords {
+  text-align:center;
+  margin: 0 auto;
+  font-size: 100%;
+  margin-bottom: 15px;
+}
+
+
+#keywords thead {
+  cursor: pointer;
+  text-align:center;
+  background: #c9dff0;
+  color:#444444;
+}
+#keywords thead tr th { 
+  text-align:center;
+  font-weight: bold;
+  padding: 12px 2px;
+  padding-left: 4px;
+}
+#keywords thead tr th span { 
+  text-align:center;
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
+  background: #acc8dd;
+  text-align:center;
+  color:black;
+}
+
+#keywords thead tr th.headerSortUp span {
+  background-image: url('http://i.imgur.com/SP99ZPJ.png');
+}
+#keywords thead tr th.headerSortDown span {
+  background-image: url('http://i.imgur.com/RkA9MBo.png');
+}
+
+
+#keywords tbody tr { 
+    text-align:center;
+  color: #FFFFFF;
+  background:#0099cc;
+}
+#keywords tbody tr td {
+    text-align:center;
+  text-align: center;
+  padding: 15px 5px;
+}
+#keywords tbody tr td.lalign {
+  text-align: left;
+}

@@ -7,8 +7,6 @@ $(document).ready(function() {
 	initializePage();
 })
 
-
-
 /*
  * Function that is called when the document is ready.
  */
@@ -17,8 +15,26 @@ $(document).ready(function() {
 	//$('#loginBtn').click(login);
 	$('#toggleClick').click(toggleSignup);
 	//$('#instructorActionBtn').click(checkSelectedCourse);
+	$('.proPic').error(invalidImageError);
 
 }
+
+
+
+function invalidImageError(e)
+{
+	alert('Image URL invalid.');	
+	$.post('/changeProfilePicture', {profilePictureURL: "/images/user.png"});
+	window.location.reload();
+}
+
+function changeProfilePicture(e)
+{
+	var proPic = prompt("Enter URL of new image:", "");
+	$.post('/changeProfilePicture', {profilePictureURL: proPic});
+	window.location.reload();
+}
+
 
 function updateSelectedCourse(e)
 {
@@ -27,13 +43,17 @@ function updateSelectedCourse(e)
 	{
 		alert("Please select a course.");
 		selectedCourse="";
-		return false
+		return false;
 	}
-	console.log(window.selectedCourse);
 	return true;
 }
 
+function selectAction(e)
+{
+	$.post('/selectAction', {action: e});
+}
 
+/*
 function checkSelectedCourse(e)
 {
 	$.get('/getSelectedCourse', checkCourse);
@@ -49,7 +69,7 @@ function checkCourse(result)
 		return false;
 	}
 	return true;
-}
+}*/
 
 function checkQuestions(form)
 {
@@ -73,6 +93,20 @@ function checkQuestions(form)
 	}
 	return true;
 }
+
+function submitAnswer(form)
+{
+	var answer=form.studentAnswer.value;
+	alert(answer);
+	$.post('/getCorrectAnswer', {studentAnswer: answer}, checkAnswer);
+
+}
+
+function checkAnswer(result)
+{
+	alert(result);
+}
+
 
 function checkSignup(form)
 {
@@ -209,6 +243,7 @@ function checkLoginDetails(result)
 	var password = tempForm.password.value;
 	var usernameExists = false;
 
+
 	for(var i=0;i<result.length;i++)
 	{
 		var obj = result[i];
@@ -230,6 +265,7 @@ function checkLoginDetails(result)
 
 		if(uname == username)
 		{
+
 			usernameExists=true;
 
 			if(pw != password)
@@ -239,7 +275,7 @@ function checkLoginDetails(result)
 				return false;
 			}
 		}
-		return true;
+
 	}
 
 
@@ -249,6 +285,7 @@ function checkLoginDetails(result)
 		tempForm.username.focus();
 		return false;
 	}
+	return true;
 }
 
 
@@ -270,7 +307,5 @@ function toggleSignup(e)
 	{
 		elem.value = "Sign Up Instead";
 	}
-//var text = $('#toggleBtn').find("button");
-//console.log(text);
 }
 

@@ -37,19 +37,103 @@
 			[
 				{
 					"courseID": "DJK 100",
-					"courseName": "DJ Khaled"
+					"courseName": "DJ Khaled",
+					"bestScore": 0,
+					"wins": 0,
+					"losses": 0,
+					"ties": 0
 				},
 				{
 					"courseID": "DJK 101A",
-					"courseName": "We Takin' Over"
+					"courseName": "We Takin' Over",
+					"bestScore": 0,
+					"wins": 0,
+					"losses": 0,
+					"ties": 0
 				},
 				{
 					"courseID": "DJK 101B",
-					"courseName": "We Da Best"
+					"courseName": "We Da Best",
+					"bestScore": 0,
+					"wins": 0,
+					"losses": 0,
+					"ties": 0
 				},
 				{
 					"courseID": "DJK 101C",
-					"courseName": "Another One"
+					"courseName": "Another One",
+					"bestScore": 0,
+					"wins": 0,
+					"losses": 0,
+					"ties": 0
+				}
+			]
+		},
+		{
+			"username": "albert",
+			"password": "einstein",
+			"name": "Albert Einstein",
+			"type:": "student",
+			"image": "/images/albert.jpg",
+			"courses":
+			[
+				{
+					"courseID": "DJK 100",
+					"courseName": "DJ Khaled",
+					"bestScore": 100,
+					"wins": 99,
+					"losses": 0,
+					"ties": 0
+				},
+				{
+					"courseID": "DJK 101A",
+					"courseName": "We Takin' Over",
+					"bestScore": 10,
+					"wins": 35,
+					"losses": 0,
+					"ties": 0
+				},
+				{
+					"courseID": "DJK 101B",
+					"courseName": "We Da Best",
+					"bestScore": 100,
+					"wins": 47,
+					"losses": 0,
+					"ties": 0
+				}
+			]
+		},
+		{
+			"username": "Bob",
+			"password": "bob",
+			"name": "Bob",
+			"type:": "student",
+			"image": "/images/user.png",
+			"courses":
+			[
+				{
+					"courseID": "DJK 100",
+					"courseName": "DJ Khaled",
+					"bestScore": 2,
+					"wins": 0,
+					"losses": 99,
+					"ties": 0
+				},
+				{
+					"courseID": "DJK 101A",
+					"courseName": "We Takin' Over",
+					"bestScore": 3,
+					"wins": 0,
+					"losses": 35,
+					"ties": 0
+				},
+				{
+					"courseID": "DJK 101B",
+					"courseName": "We Da Best",
+					"bestScore": 0,
+					"wins": 0,
+					"losses": 47,
+					"ties": 0
 				}
 			]
 		},

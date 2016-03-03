@@ -19,33 +19,40 @@
     </head>
 
     <body>
-     <div class="container">
-      <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-      <!-- p means paragraph -->
-      
-      <div class="t1">	<h1>Instructor Help</h1></div>
+      <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+        <div class="container-fluid">
+          <a class="glyphicon glyphicon-home navbar-brand navbar-left" href="/home"> Home</a>
+          <a class="glyphicon glyphicon-info-sign navbar-brand navbar-left" href="/help"> Help</a>
+          <a class="glyphicon glyphicon-log-out navbar-brand navbar-left" href="/logout"> Logout</a>
+          <span class = "glyphicon glyphicon-user navbar-brand navbar-right"> {{loginStatus.username}}</span>
+        </div>
+      </nav>
 
-      <a href="/home"><button id="testjs" class="btn btn-primary btn-lg">Home</button></a>
+      <div class="container">
+        <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+        <!-- p means paragraph -->
+        <br>
+        <div class="t1">	<h1>Instructor Help</h1></div>
 
-      
-      
-      <p>
-        About: QuizWhiz is an app intended to supplement student learning by testing the student’s knowledge in their current classes by having them compete against fellow students in an engaging trivia game. These topics are personalized to cater to students learning goals through collaboration with their instructors who are actively creating new quiz sets that allow the students to better understand the materials covered in their classes.
-      </p><br>
+        <div class = "helpText">
 
-        <p>
-          Instructor account: The instructor account allows the user to create quizzes by providing questions and answers that will be generated under the subject which they teach. The instructor has access to all quizzes they created, a list of all of the students in their class who are using QuizWhiz, statistics of their class as a whole, and student feedback on their quizzes.</p>
           <p>
+            <div class="helpSection">About:</div> QuizWhiz is an app intended to supplement student learning by testing the student’s knowledge in their current classes by having them compete against fellow students in an engaging trivia game. These topics are personalized to cater to students learning goals through collaboration with their instructors who are actively creating new quiz sets that allow the students to better understand the materials covered in their classes.
+          </p><br>
+
+          <p>
+            <div class="helpSection">Instructor account:</div> The instructor account allows the user to create quizzes by providing questions and answers that will be generated under the subject which they teach. The instructor has access to all quizzes they created, a list of all of the students in their class who are using QuizWhiz, statistics of their class as a whole, and student feedback on their quizzes.</p>
+
+          </div>
+
+
+        </div>
 
 
 
-    </div>
 
-
-
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/introHCI.js"></script>
-  </body>
-  </html>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/introHCI.js"></script>
+      </body>
+      </html>
