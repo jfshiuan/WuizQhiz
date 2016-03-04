@@ -16,9 +16,16 @@ $(document).ready(function() {
 	$('#toggleClick').click(toggleSignup);
 	//$('#instructorActionBtn').click(checkSelectedCourse);
 	$('.proPic').error(invalidImageError);
+		$('.test').click(countClick);
 
 }
 
+
+function countClick(e)
+{
+	e.preventDefault();
+	ga('send', 'event', 'changeProfilePicture', 'click');
+}
 
 
 function invalidImageError(e)

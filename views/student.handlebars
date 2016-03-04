@@ -36,10 +36,15 @@
 
 
    </div>
+   <img src={{loginStatus.image}} onclick="changeProfilePicture()" alt="profilePic" class="proPic test">
+   {{#if alt}}
+   <div class="mainButton">
+    <button  type="button" class="btn btn-default test">Change Profile Picture</button>
+  </div>   
+  {{else}}
 
-   <img src={{loginStatus.image}} onclick="changeProfilePicture()" alt="profilePic" class="proPic">
-
-   <form action="/selectCourse" method="post" onSubmit="return updateSelectedCourse(this)">
+  {{/if}}
+  <form action="/selectCourse" method="post" onSubmit="return updateSelectedCourse(this)">
 
     <select name="courseDropdown" id="cd-dropdown" class="cd-select">
       <option value=-1 selected>Choose course:</option>
@@ -83,5 +88,7 @@ $( function() {
 });
 
 </script>
+
+{{> googleAnalytics}}
 </body>
 </html>

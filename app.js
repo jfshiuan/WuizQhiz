@@ -83,6 +83,7 @@ app.post('/checkAnswer', checkAnswer.checkAnswer);
 app.post('/getCorrectAnswer', getData.getCorrectAnswer);
 app.get('/addCourse', addCourse.view);
 app.post('/addTheCourse', addTheCourse.addTheCourse);
+app.get('/student2', student.view2);
 //app.get('/project/:id', project.projectInfo);
 //app.get('/palette', palette.randomPalette)
 // Example route
